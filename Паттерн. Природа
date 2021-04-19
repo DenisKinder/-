@@ -1,0 +1,39 @@
+# -#include <iostream>
+ 
+using std::cout;
+ 
+class Nature{
+public:
+    virtual void info() = 0;
+};
+ 
+class Man:public Nature{
+public:
+    void info(){
+        cout << "MAN\n";
+    }
+};
+ 
+class Animal:public Nature{
+public:
+    void info(){
+        cout << "Animal\n";
+    }
+};
+ 
+ 
+void foo(Nature *X){
+    X->info(); 
+}
+ 
+
+int main(){
+    Man man_;
+    Animal animal_;
+ 
+    Nature *man = &man_;
+    Nature *animal = &animal_;
+ 
+    foo(man);
+    foo(animal);
+}
